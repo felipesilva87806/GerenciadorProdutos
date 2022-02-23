@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
+import { FormBaseComponent } from '../../shared/form-base/form-base.component';
+
 
 @Component({
   selector: 'app-login',
@@ -7,13 +9,29 @@ import { FormBuilder } from '@angular/forms';
   styles: [
   ]
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent extends FormBaseComponent implements OnInit {
 
   exibirSenhaTexto: boolean = false;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder) {
+      super(formBuilder);
+     }
 
-  ngOnInit(): void {
+  override ngOnInit(): void {
+    this.InicializarForm();
   }  
+
+  InicializarForm() {
+    this.form = this.formBuilder.group({
+      Login: [null, [Validators.required]],
+      Senha: [null, [Validators.required]]
+    });
+  }
+
+  Submit() {
+    // this.service.Login(this.form.value)
+    //   .pipe(first())
+    //   .subscribe(); 
+  }
 
 }
