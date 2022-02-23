@@ -1,0 +1,38 @@
+<style>
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
+
+    html,
+    body {
+        height: 100%;
+    }
+
+    .form-signin {
+        width: 100%;
+        max-width: 500px;
+        padding: 15px;
+        margin: auto;
+    }
+</style>
+
+<form class="text-center">
+    <main class="form-signin ">
+        <div>
+            <div class="form-floating mb-3">
+                <input formControlName="Login" type="email" class="form-control" id="Login" placeholder="Login">
+                <label for="Login">Usuário</label>
+            </div>
+            <div class="form-floating input-group">
+                <input formControlName="Senha" [type]="exibirSenhaTexto ? 'text' : 'password'" class="form-control" id="Senha" placeholder="Senha" placeholder="Senha">
+                <label for="Senha">Senha</label>
+                <button type="button" class="btn btn-sm btn-light border" (click)="exibirSenhaTexto=!exibirSenhaTexto">
+                    <i [ngClass]="exibirSenhaTexto ? 'far fa-eye-slash' : 'far fa-eye'"></i>
+                </button>
+            </div>
+            <button class="w-100 btn btn-lg btn-primary navbarColor mt-2" type="submit">Acessar</button>
+        </div>
+    </main>
+</form>

@@ -8,8 +8,7 @@
       "schematics": {
         "@schematics/angular:application": {
           "strict": true
-        },
-        "@schematics/angular:component": {
+        },"@schematics/angular:component": {
           "skipTests": true,
           "inlineStyle": true
         },
@@ -27,7 +26,7 @@
         },
         "@schematics/angular:module": {
           "skipTests": true
-        }
+        }        
       },
       "root": "",
       "sourceRoot": "src",
